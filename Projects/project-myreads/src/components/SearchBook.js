@@ -33,12 +33,10 @@ export class SearchBook extends Component {
         BooksAPI.search(this.state.query)
         .then((books) => {
             if(this.props.books !== undefined && this.props.books.length > 0 && books.length > 0){
-                this.props.books.map((book) => {
-                    let searchResult = books.find(t=> t.id === book.id);
-                    if(searchResult){
-                        searchResult.shelf = book.shelf;
-                    }
-                })
+                books.map((book) => {
+                    let searchResult = this.props.books.find(t=> t.id === book.id);
+                    book.shelf = searchResult !== undefined ? searchResult.shelf : 'none'
+                });
             }
             this.setState({searchResults: books});
         })

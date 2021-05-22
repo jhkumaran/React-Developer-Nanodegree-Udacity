@@ -32,7 +32,7 @@ export class Book extends Component {
                             backgroundImage: `url(${book.imageLinks.thumbnail})` 
                         }}/>}
                     <div className='book-shelf-changer'>
-                        <select onChange={(e) => this.updateShelf(e)} defaultValue='move'
+                        <select onChange={(e) => this.updateShelf(e)}
                             value={book.shelf}>
                             <option value='move' disabled>Move to...</option>
                             <option value='currentlyReading'>
