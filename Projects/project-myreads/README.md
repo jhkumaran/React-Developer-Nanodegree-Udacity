@@ -5,6 +5,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Available Scripts
 
 In the project directory, you can run:
+Once the repository is downloaded, execute 'npm install' to install all the packages required to run the application.
+
+After the install is completed, the project can be launched with the command 'npm start'.
+
+The project allows a user to search books from the library and move it to different shelves according to his/her reading preference. The user can search books using a keyword for title or author, can sort the results based on ratings or published date and mmove the book to their shelf if interested.
+
+The books chosen by the user will be shown in 'Want to Read' section in their home page. The user can move the book to 'Currently Reading' or 'Read' shelf based on the reading stage. The user can also remove the book from the shelves if not interested in the book anymore. The user is also allowed to rate the book.
 
 ### `npm start`
 
