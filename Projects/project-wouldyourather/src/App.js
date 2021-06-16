@@ -7,6 +7,8 @@ import * as questionsAction from './actions/questionsAction'
 import SignInComponent from './components/signIn/SignInComponent'
 import HomeComponent from './components/home/HomeComponent'
 import NavComponent from './components/nav/NavComponent'
+import NewQuestionComponent from './components/newQuestion/NewQuestionComponent'
+import QuestionComponent from './components/question/QuestionComponent'
 
 class App extends Component {
   componentDidMount(){
@@ -21,18 +23,13 @@ class App extends Component {
   render() {
     return (
       <Fragment>
-        {
-          this.props.activeUser === null ?
-          (
-            <Route path='/' component={SignInComponent}/>
-          ):
-          (
             <div>
               <NavComponent/>
-              <Route path='/home' exact component={HomeComponent}/>
+              <Route path='/' exact component={SignInComponent}/>
+              <Route path='/home' component={HomeComponent}/>
+              <Route path='/newQuestion' component={NewQuestionComponent}/>
+              <Route path='/question' component={QuestionComponent}/>
             </div>
-          )
-        }
       </Fragment>
     )
   }

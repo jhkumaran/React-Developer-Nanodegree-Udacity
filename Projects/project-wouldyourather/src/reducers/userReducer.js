@@ -19,7 +19,19 @@ export default function users(state = initialState, action){
                 ...state,
                 users: action.users
             }
+        case actionConstants.UPDATE_USER:
+            return updateUser(state,action);
         default:
             return state;
     }
+}
+
+const updateUser = (state, action) => {
+    let newUsers = [...state.users];
+    let userIndex = newUsers.findIndex(t=> t.id === action.user.id);
+    newUsers[userIndex] = action.user;
+    return {
+        ...state,
+        users: newUsers
+    };
 }

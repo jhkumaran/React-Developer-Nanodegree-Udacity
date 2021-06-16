@@ -13,6 +13,7 @@ export class SignInComponent extends Component {
     }
 
     componentDidMount(){
+        this.props.setActiveUser(null);
         this.setState({user: undefined})
     }
 

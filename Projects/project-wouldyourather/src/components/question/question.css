@@ -1,0 +1,55 @@
+.view-question-container {
+    margin: 5px;
+    width: 100%;
+    border: 1px solid gray;
+    margin: 15px 0px;
+}
+
+.view-question-header {
+    background-color: lightgray;
+    color: black;
+    font-weight: 600;
+    border-bottom: 1px solid gray;
+    padding: 10px 0px;
+}
+
+.view-question-header span {
+    margin-left: 10px;
+}
+
+.view-question-body{
+    height: 150px;
+    display: flex;
+    padding: 10px;
+}
+
+.vq-user-img{
+    width: 100px;
+    height: 100px;
+    margin: 15px 15px 15px 5px;
+}
+
+.view-question-section {
+    border-left: 2px solid lightgray;
+    padding: 10px;
+    width: 100%;
+}
+
+.vq-would-you-rather{
+    font-weight: bolder;
+}
+
+.vq-option {
+    margin: 10px 0px;
+}
+
+.view-question-button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 5px;
+    background-color: white;
+    border: 1px solid green;
+    color: green;
+    cursor: pointer;
+    border-radius: 5px;
+}
