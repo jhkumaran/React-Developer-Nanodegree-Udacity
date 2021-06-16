@@ -18,7 +18,7 @@
 }
 
 .view-question-body{
-    height: 150px;
+    min-height: 150px;
     display: flex;
     padding: 10px;
 }
@@ -26,7 +26,7 @@
 .vq-user-img{
     width: 100px;
     height: 100px;
-    margin: 15px 15px 15px 5px;
+    margin: auto 15px auto 5px;
 }
 
 .view-question-section {
@@ -39,7 +39,7 @@
     font-weight: bolder;
 }
 
-.vq-option {
+.vq-option-text {
     margin: 10px 0px;
 }
 
@@ -52,4 +52,77 @@
     color: green;
     cursor: pointer;
     border-radius: 5px;
+}
+
+.view-question-options{
+    display: grid;
+    padding: 10px 0px;
+}
+
+.view-question-option{
+    display: flex;
+    margin: 5px 0px;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.view-question-option span{
+    margin-top: -5px;
+    margin-left: 5px;
+}
+
+.question-submit-button{
+    width: 100%;
+    background-color: green;
+    color: white;
+    height: 30px;
+    cursor: pointer;
+}
+
+.question-submit-button.disabled{
+    cursor: not-allowed;
+}
+
+.view-question-resultOption {
+    display: grid;
+    margin: 10px 0px;
+    border: 1px solid forestgreen;
+    padding: 15px 0px;
+    border-radius: 5px;
+    color: black;
+    font-weight: 500;
+}
+
+.view-question-resultOption.selected {
+    background: rgba(0, 255, 0, 0.3);
+    color: forestgreen;
+}
+
+.view-question-resultOption span{
+    margin-left: 10px;
+}
+
+.result-bar {
+    margin: 10px;
+    border: 1px solid gray;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.your-choice{
+    float: right;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: orange;
+    margin-left: 400px;
+    margin-top: -10px;
+    text-align: center;
+    display: none;
+}
+
+.your-choice.show{
+    display: block;
+    font-size: 15px;
 }

@@ -1,4 +1,4 @@
-import { _getUsers, _getQuestions, _saveQuestion } from './data'
+import { _getUsers, _getQuestions, _saveQuestion, _updateAnswer } from './data'
 
 export function getAllUsers () {
     return Promise.all([
@@ -18,4 +18,8 @@ export function getAllQuestions(){
 
 export function saveQuestion(question){
     return _saveQuestion(question);
+}
+
+export function updateAnswer(questionId, selectedOption, userId){
+    return _updateAnswer(questionId, selectedOption, userId);
 }

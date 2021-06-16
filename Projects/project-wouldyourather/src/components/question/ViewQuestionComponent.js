@@ -41,7 +41,7 @@ export class ViewQuestionComponent extends Component {
                         <div className='vq-would-you-rather'>
                             Would you rather
                         </div>
-                        <div className='vq-option'>
+                        <div className='vq-option-text'>
                             {`...${question.optionOne.text}...`}
                         </div>
                         <button className='view-question-button'

@@ -32,3 +32,8 @@ export const viewQuestion = (question) => dispatch => {
         question
     })
 }
+
+export const updateAnswer = (questionId, selectedOption, userId) => async dispatch => {
+    let result = await API.updateAnswer(questionId, selectedOption, userId);
+    console.log(result);
+}

@@ -49,3 +49,27 @@ export function _saveQuestion(question){
     }, 100);
   })
 }
+
+export function _updateAnswer(questionId, selectedOption, userId){
+  return new Promise((res, rej) => {
+    setTimeout(() => {
+      let questionIndex = questions.findIndex(t=> t.id === questionId);
+      let question = questions[questionIndex];
+      console.log(question);
+      if(selectedOption === 0){
+        question.optionOne.answeredUsers.push(userId);
+      } else {
+        question.optionTwo.answeredUsers.push(userId);
+      }
+      question.votes = question.votes + 1;
+      questions[questionIndex] = question;
+      console.log(questions);
+      let userIndex = users.findIndex(t=> t.id === userId);
+      let user = users[userIndex];
+      user.answeredQuestions.push(question.id);
+      user.score = user.score + 1;
+      users[userIndex] = user;
+      res({ questions, users });
+    }, 100);
+  })
+}
