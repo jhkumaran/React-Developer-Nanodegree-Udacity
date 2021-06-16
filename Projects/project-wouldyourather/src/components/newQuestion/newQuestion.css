@@ -1,0 +1,52 @@
+.nq-container {
+    border: 1px solid gray;
+    margin: auto;
+    margin-top: 10px;
+    display: table;
+    width: 500px;
+}
+
+.nq-header {
+    padding: 10px 0px;
+    border-bottom: 1px solid;
+}
+
+.nq-welcome-message{
+    font-size: x-large;
+    font-weight: bold;
+    text-align: center;
+}
+
+.nq-body{
+    padding: 10px;
+}
+
+.would-you-rather-text{
+    font-size: large;
+    font-weight: bolder;
+}
+
+.center{
+    text-align: center;
+}
+
+.input-options{
+    margin: 10px 0px;
+    width: 100%;
+    height: 35px;
+}
+
+.nq-submit-button{
+    color: white;
+    background-color: forestgreen;
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.nq-submit-button.disabled{
+    background-color: gray;
+    cursor: not-allowed
+}

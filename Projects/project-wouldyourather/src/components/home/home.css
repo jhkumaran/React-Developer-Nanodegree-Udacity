@@ -1,0 +1,28 @@
+.question-contatiner{
+    border: 1px solid gray;
+    margin: auto;
+    margin-top: 10px;
+    display: block;
+    width: 600px;
+}
+
+.question-header {
+    display: flex;
+    border-bottom: 1px solid gray;
+}
+
+.question-section{
+    width: 300px;
+    text-align: center;
+    font-weight: 500;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.question-section.selected{
+    background-color: lightgray;
+    color: forestgreen;
+}
+.question-body{
+    padding: 0px 15px;
+}
