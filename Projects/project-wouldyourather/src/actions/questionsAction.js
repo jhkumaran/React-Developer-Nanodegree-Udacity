@@ -4,7 +4,6 @@ import * as helper from '../utils/helper'
 
 export const getAllQuestions = () => async dispatch => {
     const result = await API.getAllQuestions();
-    console.log(result.questions);
     dispatch({
         type: constants.GET_ALL_QUESTIONS,
         questions : result.questions
@@ -13,9 +12,7 @@ export const getAllQuestions = () => async dispatch => {
 
 export const saveQuestion = (optionOne, optionTwo, createdUser) => async dispatch => {
     let question = helper.createQuestion(optionOne, optionTwo, createdUser);
-    console.log(question);
     const result = await API.saveQuestion(question);
-    console.log(result);
     dispatch({
         type: constants.SAVE_QUESTION,
         question: result.question
@@ -35,5 +32,12 @@ export const viewQuestion = (question) => dispatch => {
 
 export const updateAnswer = (questionId, selectedOption, userId) => async dispatch => {
     let result = await API.updateAnswer(questionId, selectedOption, userId);
-    console.log(result);
+    dispatch({
+        type: constants.GET_ALL_QUESTIONS,
+        questions: result.questions
+    })
+    dispatch({
+        type: constants.GET_USERS,
+        users: result.users
+    })
 }

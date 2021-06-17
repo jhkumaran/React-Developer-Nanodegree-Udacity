@@ -8,13 +8,11 @@ const initialState = {
 export default function questions(state = initialState, action){
     switch(action.type){
         case actionConstants.GET_ALL_QUESTIONS:
-            console.log(action.questions);
             return {
                 ...state,
                 questions: action.questions
             };
         case actionConstants.SAVE_QUESTION:
-            console.log(action.question);
             return {
                 ...state,
                 questions: [...state.questions, action.question]

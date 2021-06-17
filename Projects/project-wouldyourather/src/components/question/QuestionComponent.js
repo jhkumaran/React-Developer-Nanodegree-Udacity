@@ -14,16 +14,12 @@ export class QuestionComponent extends Component {
 
     componentDidMount(){
         const { question } = this.props;
-        console.log(question);
         let user = this.props.users.find(t=> t.id === this.props.activeUser);
-        console.log(user);
         let createdUser = this.props.users.find(t=> t.id === question.createdUser);
-        console.log(createdUser);
         let answered = user.answeredQuestions.find(t=> t === question.id) !== undefined;
-        console.log(answered);
         this.setState({
             user, createdUser, question, answered
-        }, () => console.log(this.state))
+        })
     }
 
     optionSelected = (option) => {

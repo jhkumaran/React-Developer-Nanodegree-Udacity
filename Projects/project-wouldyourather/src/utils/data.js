@@ -40,11 +40,8 @@ export function _saveQuestion(question){
   return new Promise((res,rej) => {
     setTimeout(() => {
       questions = [...questions, question];
-      console.log(questions);
       let user = users.find(t=> t.id === question.createdUser);
       user.score = user.score + 1;
-      console.log(user);
-      console.log(users);
       res({question, user});
     }, 100);
   })
@@ -55,7 +52,6 @@ export function _updateAnswer(questionId, selectedOption, userId){
     setTimeout(() => {
       let questionIndex = questions.findIndex(t=> t.id === questionId);
       let question = questions[questionIndex];
-      console.log(question);
       if(selectedOption === 0){
         question.optionOne.answeredUsers.push(userId);
       } else {
@@ -63,7 +59,6 @@ export function _updateAnswer(questionId, selectedOption, userId){
       }
       question.votes = question.votes + 1;
       questions[questionIndex] = question;
-      console.log(questions);
       let userIndex = users.findIndex(t=> t.id === userId);
       let user = users[userIndex];
       user.answeredQuestions.push(question.id);

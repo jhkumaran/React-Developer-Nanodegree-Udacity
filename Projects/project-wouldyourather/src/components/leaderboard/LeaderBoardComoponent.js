@@ -7,7 +7,6 @@ export class LeaderBoardComoponent extends Component {
     render() {
         let users = [...this.props.users];
         users = users.sort((a,b) => b.score - a.score);
-        console.log(users);
         return (
             <>
                 {

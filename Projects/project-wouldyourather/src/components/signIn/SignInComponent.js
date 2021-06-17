@@ -18,7 +18,6 @@ export class SignInComponent extends Component {
     }
 
     handleChange = (user) => {
-        console.log(user);
         this.setState({
             user: user
         })
@@ -31,9 +30,7 @@ export class SignInComponent extends Component {
     }
 
     render() {
-        console.log(this.props.users);
         let user = this.props.users.find(u => u.id === this.props.activeUser);
-        console.log(user);
         return (
             <div className='container'>
                 <div className='header'>

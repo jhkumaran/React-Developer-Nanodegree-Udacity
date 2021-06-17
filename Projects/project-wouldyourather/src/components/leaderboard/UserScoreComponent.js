@@ -11,7 +11,6 @@ export class UserScoreComponent extends Component {
     }
 
     componentDidMount(){
-        console.log(this.props.user);
         this.updateUserDetails(this.props.user);
     }
 
@@ -22,7 +21,7 @@ export class UserScoreComponent extends Component {
             user,
             answeredPts,
             createdPts
-        }, () => console.log(this.state))
+        })
     }
 
     render() {

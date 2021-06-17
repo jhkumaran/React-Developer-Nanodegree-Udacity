@@ -22,7 +22,6 @@ export class NewQuestionComponent extends Component {
 
     submitQuestion = (e) => {
         e.preventDefault();
-        console.log(this.state);
         this.props.saveQuestion(this.state.optionOne, this.state.optionTwo, this.props.activeUser);
         this.props.history.push('/home');
     }
