@@ -1,8 +1,7 @@
 import * as actionConstants from '../actions/constants'
 
 const initialState = {
-    questions: [],
-    question: undefined
+    questions: []
 }
 
 export default function questions(state = initialState, action){
@@ -13,16 +12,20 @@ export default function questions(state = initialState, action){
                 questions: action.questions
             };
         case actionConstants.SAVE_QUESTION:
-            return {
-                ...state,
-                questions: [...state.questions, action.question]
-            };
-        case actionConstants.VIEW_QUESTION:
-            return {
-                ...state,
-                question: action.question
-            }
+            return addAndSortQuestions(state, action);
         default:
             return state;
+    }
+}
+
+const addAndSortQuestions = (state, action) => {
+    let questions = [...state.questions, action.question];
+    questions = questions.sort((a, b) => 
+                            b.createdDate !== undefined ?
+                            new Date(b.createdDate) - new Date(a.createdDate) : 
+                            -1);
+    return {
+        ...state,
+        questions
     }
 }

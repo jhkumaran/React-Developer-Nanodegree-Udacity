@@ -15,7 +15,8 @@ export const createQuestion = (optionOne, optionTwo, createdUser) => {
             text: optionTwo,
             answeredUsers: []
         },
-        votes: 0
+        votes: 0,
+        createdDate: new Date()
     }
-    return newQuestion
+    return newQuestion;
 }

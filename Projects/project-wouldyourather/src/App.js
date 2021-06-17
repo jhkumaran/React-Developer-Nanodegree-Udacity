@@ -28,8 +28,8 @@ class App extends Component {
               <NavComponent/>
               <Route path='/' exact component={SignInComponent}/>
               <Route path='/home' component={HomeComponent}/>
-              <Route path='/newQuestion' component={NewQuestionComponent}/>
-              <Route path='/question' component={QuestionComponent}/>
+              <Route path='/add' component={NewQuestionComponent}/>
+              <Route path='/question/:question_id' component={QuestionComponent}/>
               <Route path='/leaderboard' component={LeaderBoardComoponent}/>
             </div>
       </Fragment>

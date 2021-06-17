@@ -13,7 +13,9 @@ export class QuestionComponent extends Component {
     }
 
     componentDidMount(){
-        const { question } = this.props;
+        const { questions } = this.props;
+        const { question_id } = this.props.match.params;
+        let question = questions.find(t=> t.id === question_id);
         let user = this.props.users.find(t=> t.id === this.props.activeUser);
         let createdUser = this.props.users.find(t=> t.id === question.createdUser);
         let answered = user.answeredQuestions.find(t=> t === question.id) !== undefined;
@@ -156,7 +158,7 @@ export class QuestionComponent extends Component {
 const mapStateToProps = (state) => ({
     users: state.userReducer.users,
     activeUser: state.userReducer.activeUser,
-    question: state.questionsReducer.question
+    questions: state.questionsReducer.questions
 });
 
 const mapDispatchToProps = (dispatch) => 

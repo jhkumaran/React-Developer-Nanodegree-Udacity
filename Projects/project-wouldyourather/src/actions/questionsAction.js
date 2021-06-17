@@ -4,9 +4,13 @@ import * as helper from '../utils/helper'
 
 export const getAllQuestions = () => async dispatch => {
     const result = await API.getAllQuestions();
+    let questions = result.questions.sort((a, b) => 
+                        b.createdDate !== undefined ?
+                        new Date(b.createdDate) - new Date(a.createdDate) : 
+                        -1);
     dispatch({
         type: constants.GET_ALL_QUESTIONS,
-        questions : result.questions
+        questions : questions
     });
 }
 
@@ -20,13 +24,6 @@ export const saveQuestion = (optionOne, optionTwo, createdUser) => async dispatc
     dispatch({
         type: constants.UPDATE_USER,
         user: result.user
-    })
-}
-
-export const viewQuestion = (question) => dispatch => {
-    dispatch({
-        type: constants.VIEW_QUESTION,
-        question
     })
 }
 
