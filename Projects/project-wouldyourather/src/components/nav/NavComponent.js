@@ -18,7 +18,7 @@ export class NavComponent extends Component {
             <Fragment>
                 <div className='nav-container'>
                     <div className='nav'>
-                        <NavLink to='/home' exact activeClassName='active'>
+                        <NavLink to='/' exact activeClassName='active'>
                             Home
                         </NavLink>
                         <NavLink to='/add' activeClassName='active'>

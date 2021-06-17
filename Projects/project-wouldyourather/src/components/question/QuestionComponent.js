@@ -13,9 +13,21 @@ export class QuestionComponent extends Component {
     }
 
     componentDidMount(){
+        this.loadQuestions();
+    }
+
+    componentDidUpdate(prevProps){
+        if(prevProps.activeUser !== this.props.activeUser){
+            this.loadQuestions();
+        }
+    }
+
+    loadQuestions = () => {
+        if(this.props.activeUser === null) return;
         const { questions } = this.props;
         const { question_id } = this.props.match.params;
         let question = questions.find(t=> t.id === question_id);
+        if(question === null || question === undefined) return;
         let user = this.props.users.find(t=> t.id === this.props.activeUser);
         let createdUser = this.props.users.find(t=> t.id === question.createdUser);
         let answered = user.answeredQuestions.find(t=> t === question.id) !== undefined;
@@ -72,19 +84,9 @@ export class QuestionComponent extends Component {
                         ? `linear-gradient(to right, green ${votedPercentage}%, white ${100-votedPercentage}%)` 
                         : `linear-gradient(to left, white ${100-votedPercentage}%, green ${votedPercentage}%)`
         return (
-            <div className='result-bar' style={{background: `${styleText}`}}/>
-        )
-    }
-
-    getResultBarOption2 = () => {
-        const { question } = this.state;
-        let votedFor = question.optionTwo.answeredUsers.length;
-        let votedPercentage = Math.round((votedFor / question.votes) * 100);
-        let styleText = votedPercentage >= 50 
-                        ? `linear-gradient(to right, green ${votedPercentage}%, white ${100-votedPercentage}%)` 
-                        : `linear-gradient(to left, white ${100-votedPercentage}%, green ${votedPercentage}%)`
-        return (
-            <div className='result-bar' style={{background: `${styleText}`}}/>
+            <div className='result-bar' style={{background: `${styleText}`, color: 'black', textAlign: 'center'}}>
+                {`${votedPercentage}%`}
+            </div>
         )
     }
 
@@ -133,7 +135,9 @@ export class QuestionComponent extends Component {
 
     render() {
         const { user, createdUser, question, answered } = this.state;
-        return user === undefined || question === undefined || createdUser === undefined ? <></> : (
+        return user === undefined || question === undefined || createdUser === undefined ? (
+            <div>Page not found</div>
+        ) : (
             <div style={{width: '600px', margin:'0px auto'}}>
                 <div className='view-question-container'>
                     <div className='view-question-header'>
