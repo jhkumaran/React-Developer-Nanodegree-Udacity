@@ -24,11 +24,8 @@ export class ViewQuestionComponent extends Component {
     }
 
     render() {
-        const {question, answered} = this.props;
-        console.log(question);
-        console.log(answered);
+        const {question} = this.props;
         let user = this.props.users.find(t=> t.id === question.createdUser);
-        console.log(user);
         return (
             <div className='view-question-container'>
                 <div className='view-question-header'>

@@ -9,6 +9,7 @@ import HomeComponent from './components/home/HomeComponent'
 import NavComponent from './components/nav/NavComponent'
 import NewQuestionComponent from './components/newQuestion/NewQuestionComponent'
 import QuestionComponent from './components/question/QuestionComponent'
+import LeaderBoardComoponent from './components/leaderboard/LeaderBoardComoponent'
 
 class App extends Component {
   componentDidMount(){
@@ -29,6 +30,7 @@ class App extends Component {
               <Route path='/home' component={HomeComponent}/>
               <Route path='/newQuestion' component={NewQuestionComponent}/>
               <Route path='/question' component={QuestionComponent}/>
+              <Route path='/leaderboard' component={LeaderBoardComoponent}/>
             </div>
       </Fragment>
     )

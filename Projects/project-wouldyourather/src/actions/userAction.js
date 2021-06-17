@@ -3,7 +3,6 @@ import * as constants from './constants';
 
 export const getAllUsers = () => async dispatch => {
     const result = await API.getAllUsers();
-    console.log(result.users);
     dispatch({
         type: constants.GET_USERS,
         users : result.users

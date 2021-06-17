@@ -14,7 +14,6 @@ export default function users(state = initialState, action){
                 activeUser: action.activeUser
             };
         case actionConstants.GET_USERS:
-            console.log(action.users);
             return{
                 ...state,
                 users: action.users

@@ -23,19 +23,18 @@ export class HomeComponent extends Component {
 
     updateQuestions(){
         let user = this.props.users.find(t=> t.id === this.props.activeUser);
-        console.log(user);
         if(user.answeredQuestions.length === 0){
             this.setState({
                 answered: [],
                 unanswered: this.props.questions
-            }, () => console.log(this.state))
+            })
         }else{
             let answered = this.props.questions.filter(t=> user.answeredQuestions.find(a => a === t.id) !== undefined);
             let unanswered = this.props.questions.filter(t=> user.answeredQuestions.find(a=> a === t.id) === undefined);
             this.setState({
                 answered,
                 unanswered
-            }, () => console.log(this.state))
+            })
         }
     }
 

@@ -14,7 +14,6 @@ export class NavComponent extends Component {
 
     render() {
         let user = this.props.users.find(u => u.id === this.props.activeUser);
-        console.log(user);
         return user !== undefined ? (
             <Fragment>
                 <div className='nav-container'>
