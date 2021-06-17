@@ -5,6 +5,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Available Scripts
 
 In the project directory, you can run:
+Once the repository is downloaded, execute 'npm install' to install all the packages required to run the application.
+
+After the install is completed, the project can be launched with the command 'npm start'.
+
+This is a 'Would You Rather' react app where different users can login to their own account, create and answer polls. A user can view his answered and unanswered questions in the home page and choose a poll to submit a answer or view the results. The user can also create a new question which will be shown to all the users. EVery question will have information about who created it and the two options. Once answered, the results will show number of votes for each option.
+
+Every created question and answered question will be rewarded with 1 points each. The users can compare their scores with other users in the leaderboard section. The users will be ordered according to their scores and the details of their scores will be shown.
 
 ### `npm start`
 
