@@ -1,0 +1,62 @@
+.score-container {
+    width: 600px;
+    margin: 10px auto;
+    border: 1px solid gray;
+    padding: 10px;
+    display: flex;
+}
+
+.score-img {
+    width: 100px;
+    height: 100px;
+    margin: auto 15px auto 5px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+.user-info {
+    border-left: 1px solid gray;
+    width: 350px;
+}
+
+.user-name {
+    margin: 10px;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.user-info h4{
+    margin-left: 10px;
+}
+
+.score-info-container {
+    border-left: 1px solid gray;
+    padding-left: 10px;
+}
+
+.score-info-header {
+    border: 1px solid gray;
+    width: 100px;
+    text-align: center;
+    background-color: lightgray;
+    font-weight: bold;
+}
+
+.score-details-container {
+    border: 1px solid gray;
+    height: 100px;
+    padding: 10px;
+}
+
+.score-details {
+    border: 1px solid gray;
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    background-color: green;
+    color: white;
+    text-align: center;
+    padding-top: 18px;
+    font-size: x-large;
+    font-weight: bold;
+}
