@@ -26,16 +26,25 @@ export class HomeComponent extends Component {
         if(user.answeredQuestions.length === 0){
             this.setState({
                 answered: [],
-                unanswered: this.props.questions
+                unanswered: this.sortQuestions(this.props.questions)
             })
         }else{
             let answered = this.props.questions.filter(t=> user.answeredQuestions.find(a => a === t.id) !== undefined);
             let unanswered = this.props.questions.filter(t=> user.answeredQuestions.find(a=> a === t.id) === undefined);
+            answered = this.sortQuestions(answered);
+            unanswered = this.sortQuestions(unanswered);
             this.setState({
                 answered,
                 unanswered
             })
         }
+    }
+
+    sortQuestions = (questions) => {
+        return questions.sort((a, b) => 
+                b.createdDate !== undefined ?
+                new Date(b.createdDate) - new Date(a.createdDate) : 
+                -1);
     }
 
     viewSection = (selected) => {

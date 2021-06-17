@@ -4,14 +4,14 @@ let users = [
     name: "Sarah Drasner",
     avatarURL: "https://tylermcginnis.com/would-you-rather/sarah.jpg",
     answeredQuestions: [],
-    score: 0
+    score: 1
   },
   {
     id: "tylermcginnis",
     name: "Tyler McGinnis",
     avatarURL: "https://tylermcginnis.com/would-you-rather/tyler.jpg",
     answeredQuestions: [],
-    score: 0
+    score: 1
   },
   {
     id: "dan_abramov",
@@ -22,7 +22,36 @@ let users = [
   }
 ]
 
-let questions = []
+let questions = [
+  {
+    id: "sfohnrkrc526od7nrm6w",
+    createdUser: "tylermcginnis",
+    optionOne: {
+      text: "be a developer",
+      answeredUsers:[]
+    },
+    optionTwo: {
+      text: "be a tester",
+      answeredUsers:[]
+    },
+    votes: 0,
+    createdDate: new Date(),
+  },
+  {
+    id: "k7zpbfbiouatift1wqxgtn",
+    createdUser: "sarah_edo",
+    optionOne: {
+      text: "watch a comedy movie",
+      answeredUsers:[]
+    },
+    optionTwo: {
+      text: "watch a horror movie",
+      answeredUsers:[]
+    },
+    votes: 0,
+    createdDate: new Date(),
+  }
+]
 
 export function _getUsers () {
   return new Promise((res, rej) => {

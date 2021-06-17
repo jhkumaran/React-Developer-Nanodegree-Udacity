@@ -19,8 +19,7 @@ export class ViewQuestionComponent extends Component {
     }
 
     viewSelectedQuestion = () => {
-        this.props.viewQuestion(this.props.question);
-        this.props.history.push('/question');
+        this.props.history.push(`/question/${this.props.question.id}`);
     }
 
     render() {

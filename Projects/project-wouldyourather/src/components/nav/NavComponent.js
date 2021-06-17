@@ -21,7 +21,7 @@ export class NavComponent extends Component {
                         <NavLink to='/home' exact activeClassName='active'>
                             Home
                         </NavLink>
-                        <NavLink to='/newQuestion' activeClassName='active'>
+                        <NavLink to='/add' activeClassName='active'>
                             New Question
                         </NavLink>
                         <NavLink to='/leaderboard' activeClassName='active'>
