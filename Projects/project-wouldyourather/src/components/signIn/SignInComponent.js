@@ -26,7 +26,6 @@ export class SignInComponent extends Component {
     signIn = (e) => {
         e.preventDefault();
         this.props.setActiveUser(this.state.user.id);
-        this.props.history.push('/home');
     }
 
     render() {

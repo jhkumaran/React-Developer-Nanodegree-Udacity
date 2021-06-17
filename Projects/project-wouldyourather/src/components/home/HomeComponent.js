@@ -19,9 +19,13 @@ export class HomeComponent extends Component {
         if(prevProps.questions !== this.props.questions){
             this.updateQuestions();
         }
+        if(prevProps.activeUser !== this.props.activeUser){
+            this.updateQuestions();
+        }
     }
 
     updateQuestions(){
+        if(this.props.activeUser === null) return;
         let user = this.props.users.find(t=> t.id === this.props.activeUser);
         if(user.answeredQuestions.length === 0){
             this.setState({

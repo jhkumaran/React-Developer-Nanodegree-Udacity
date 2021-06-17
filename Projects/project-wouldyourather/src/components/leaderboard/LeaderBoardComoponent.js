@@ -20,6 +20,7 @@ export class LeaderBoardComoponent extends Component {
 }
 const mapStateToProps = (state) => ({
     users: state.userReducer.users,
+    activeUser: state.userReducer.activeUser
 })
   
   const mapDispatchToProps = (dispatch) => 
