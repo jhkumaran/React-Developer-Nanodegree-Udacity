@@ -2,6 +2,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Notifications from 'expo-notifications';
 import * as Permissions from 'expo-permissions';
 
+const NOTIFICATION_KEY = 'MobileFlashCards:notifications';
 export function clearLocalNotification() {
     return AsyncStorage.removeItem(NOTIFICATION_KEY)
       .then(Notifications.cancelAllScheduledNotificationsAsync)
