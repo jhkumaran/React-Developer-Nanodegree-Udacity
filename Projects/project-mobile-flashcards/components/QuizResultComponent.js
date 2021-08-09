@@ -4,9 +4,21 @@ import { gray,blue,white} from '../utils/colors'
 import { connect } from 'react-redux';
 import { clearQuizScoreApi } from '../utils/api';
 import { clearQuizScore } from '../actions';
+import { clearLocalNotification, setLocalNotification } from '../utils/helpers';
+import * as Device from 'expo-device';
 
 export class QuizResultComponent extends Component {
 
+    componentDidMount() {
+        if (Device.isDevice && Device.brand !== null) {
+          clearLocalNotification()
+          .then(setLocalNotification)
+        }
+        else
+        {
+          console.log('Must use physical device for Local Notifications');
+        }
+      }
     onReStartQuiz = () => {
         const {deckItem,navigation,dispatch} = this.props;
         clearQuizScoreApi(deckItem.title).then(() => {
