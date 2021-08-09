@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { View, Text, TextInput,StyleSheet, TouchableOpacity} from 'react-native'
+import { addDeck } from '../actions';
 import { addDeckApi } from '../utils/api';
 import { blue,white} from '../utils/colors'
+import { connect } from 'react-redux'
 
 const styles = StyleSheet.create({
     container: {
@@ -33,6 +35,7 @@ export class NewDeckComponent extends Component {
 
     onAdd = (title) => {
         addDeckApi(title);
+        this.props.dispatch(addDeck(title));
         this.setState({text : ''});
         this.props.navigation.navigate('Deck') 
     }
@@ -63,4 +66,4 @@ export class NewDeckComponent extends Component {
     }
 }
 
-export default NewDeckComponent
+export default connect()(NewDeckComponent)

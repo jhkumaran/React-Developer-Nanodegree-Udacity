@@ -27,7 +27,8 @@ export class DeckComponent extends Component {
                     <Text style ={{ color: white}}>Add Card</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.button}
-                onPress={this.onStartQuiz}>
+                onPress={this.onStartQuiz} 
+                disabled = { deckItem.questions === undefined || deckItem.questions === null || deckItem.questions.length === 0 }>
                     <Text style ={{ color: white}}>Start Quiz</Text>
             </TouchableOpacity>
         </View>

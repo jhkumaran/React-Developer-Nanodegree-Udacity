@@ -62,12 +62,11 @@ export class QuizComponent extends Component {
     }
 
     validateAnswer = (answer) => {
-        const {dispatch,deckItem,currentQuestionCount} = this.props
-        const currentQuestion  = deckItem.questions[currentQuestionCount]
+        const {dispatch,deckItem} = this.props
         if (answer === 'correct')
         {
-            deckItem.score =  deckItem.score + 1
-            console.log('Correct Answer - ' + deckItem.score)
+            deckItem.score = deckItem.score + 1 <= deckItem.questions.length ?  deckItem.score + 1 : deckItem.score;
+            console.log('Correct Answer - ' + deckItem.score);
         }
         else 
         {
@@ -94,6 +93,9 @@ export class QuizComponent extends Component {
 
     render() {
         const { frontInterpolate, backInterpolate } = this.state;
+        if(frontInterpolate === null || backInterpolate === null){
+            return <></>
+        }
         const {deckItem,total,currentQuestionCount} = this.props;
         const frontAnimatedStyle = {
             transform: [
