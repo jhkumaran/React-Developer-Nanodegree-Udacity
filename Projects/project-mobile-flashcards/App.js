@@ -13,6 +13,7 @@ import DeckComponent from './components/DeckComponent';
 import AddCardComponent from './components/AddCardComponent';
 import QuizComponent from './components/QuizComponent';
 import QuizResultComponent from './components/QuizResultComponent';
+import { setLocalNotification } from './utils/helpers';
 
 const Stack = createStackNavigator();
 const DeckStack = () => {
@@ -70,6 +71,17 @@ const DeckStack = () => {
 
 const Tab = createMaterialTopTabNavigator();
 export class App extends Component {
+
+  componentDidMount() {
+    if (Device.isDevice && Device.brand !== null) { 
+      setLocalNotification();
+    }
+    else
+    {
+      console.log('Must use physical device for Local Notifications');
+    }
+  }
+
   render() {
     return (
       <Provider store={createStore(reducer)}>
