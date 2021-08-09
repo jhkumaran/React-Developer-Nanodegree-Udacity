@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { clearQuizScoreApi } from '../utils/api';
 import { clearQuizScore } from '../actions';
 import { clearLocalNotification, setLocalNotification } from '../utils/helpers';
+import * as Device from 'expo-device';
 
 export class QuizResultComponent extends Component {
 
