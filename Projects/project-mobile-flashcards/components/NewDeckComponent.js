@@ -37,7 +37,7 @@ export class NewDeckComponent extends Component {
         addDeckApi(title);
         this.props.dispatch(addDeck(title));
         this.setState({text : ''});
-        this.props.navigation.navigate('Deck') 
+        this.props.navigation.navigate('DeckList'); 
     }
       
     render() {
