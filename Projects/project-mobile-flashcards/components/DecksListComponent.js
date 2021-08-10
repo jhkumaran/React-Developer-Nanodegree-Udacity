@@ -31,12 +31,14 @@ export class DecksListComponent extends Component {
     }
 
     componentDidMount(){
+        this.loadDecks();     
+    }
+
+    loadDecks = async() => {
         const { dispatch } = this.props;
-        getDecksApi().then((decks) => {
-            dispatch(receiveDeckList(decks));
-        }).then(() =>{
-            this.setState({ ready: true })
-        })        
+        let decks = await getDecksApi();
+        dispatch(receiveDeckList(decks));
+        this.setState({ ready: true });
     }
 
     clearDecks = () => {

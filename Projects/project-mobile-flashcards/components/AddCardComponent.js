@@ -12,14 +12,12 @@ export class AddCardComponent extends Component {
         answer: '',
     }
 
-    onSubmitQuestion = () => {
-        const { dispatch, title, navigation } = this.props;
-        const { question, answer } = this.state;
-        addCardToDeckApi(title, {question, answer})
-        .then(() => dispatch(addCardToDeck(title, {question, answer})))
-        .then(() => {
-            navigation.dispatch(CommonActions.goBack());
-        })
+    onSubmitQuestion = async() => {
+      const { dispatch, title, navigation } = this.props;
+      const { question, answer } = this.state;
+      await addCardToDeckApi(title, {question, answer});
+      dispatch(addCardToDeck(title, {question, answer}));
+      navigation.dispatch(CommonActions.goBack());
     }
 
     render() {

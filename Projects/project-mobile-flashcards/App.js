@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import * as Device from 'expo-device';
 import DecksListComponent from './components/DecksListComponent';
 import { white,orange} from './utils/colors'
-import reducer from './reducers';
+import reducer from './reducers/index';
 import NewDeckComponent from './components/NewDeckComponent';
 import DeckComponent from './components/DeckComponent';
 import AddCardComponent from './components/AddCardComponent';
