@@ -88,9 +88,9 @@ export class App extends Component {
         <NavigationContainer>
           <Tab.Navigator>
             <Tab.Screen 
-              name="Deck"
+              name="DeckStack"
               component={DeckStack}
-              initialRouteName="Deck"
+              initialRouteName="DeckList"
             />
             <Tab.Screen 
               name="New Deck"
