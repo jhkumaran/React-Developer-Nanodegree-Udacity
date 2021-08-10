@@ -6,12 +6,11 @@ import { clearQuizScoreApi } from '../utils/api';
 import { clearQuizScore } from '../actions';
 
 export class DeckComponent extends Component {
-    onStartQuiz = () => {
+    onStartQuiz = async() => {
         const {deckItem,navigation,dispatch} = this.props;
         deckItem.score = 0;
-        clearQuizScoreApi(deckItem.title).then(() => {
-            dispatch(clearQuizScore(deckItem.title))
-        });
+        await clearQuizScoreApi(deckItem.title);
+        dispatch(clearQuizScore(deckItem.title));
         navigation.navigate('Quiz',{deckItem:deckItem,currentQuestionCount : 0})
     }
 
